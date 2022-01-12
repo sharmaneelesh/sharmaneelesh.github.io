@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+.center{
+  width: 135px;
+  height: 160px;
+  margin-top: -20px;
+  margin-right: 10px;
+ 
+}
+
+  .navigation{
+    justify-content: center;
+    display: flex;
+         
+  }
+
+  ul.navbar {
+    
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+   
+    overflow: hidden;
+    background-color:white;
+  }
+  
+  li{
+    float: left;
+  }
+  
+  li a {
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    color:black;
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    margin-top: 25px;
+  }
+
+  .active
+  {
+      background-color: #f8cf2c;
+  }
+
+  h1{
+    letter-spacing: 2px;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bolder;
+
+  }
+  span{
+      color: #1b5341;
+  }
+  div{
+    display: flex;
+  }
+  .png{
+    height: 330px;
+    width: 430px;
+    margin-top: -20px;
+    margin-left: 90px;
+    margin-right: 0px;
+  }
+
+  .top-none{
+    color: black;
+  }
+
+  .p1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-left: 130px;
+    width: 40%;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .p2{
+    /* margin-left: 200px; */
+    font-weight: 500;
+    margin: auto;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    /* margin-top: 60px; */
+    color: black;
+    width: 80%;
+    text-align: justify;
+    text-justify: inter-word;
+  }
+  .img1{
+    margin-left: 80px;
+    margin-top: -10px;
+    width:120px;
+    height:55px;
+  }
+ 
+  .img2{
+    margin-top: -10px;
+    width: 120px;
+    height: 55px;
+  }
+  .img3{
+  margin-left: 80px;
+  margin-top: -20px;
+  width:140px;
+  height:70px;
+  }
+
+  .para1, .para2, .para3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .d-2{
+    justify-content: flex-end;
+    margin-bottom: 2%;
+  }
+  .d-1{
+    margin-bottom: 1%;
+  }
+
+/* Buttons */
+
+.btn {
+  -webkit-border-radius: 41;
+  -moz-border-radius: 41;
+  border-radius: 31px;
+  font-family: 'Open Sans', sans-serif;
+ 
+  color: #ffffff;
+  font-size: 20px;
+  background: #17684d;
+  padding: 15px 45px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+}
+
+.btn:hover {
+  background: black;
+  text-decoration: none;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+ 
+ /* footer */
+
+.footer{
+  background: #1b5341;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.footer-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+}
+
+.footer-left{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 50px;
+  
+}
+
+.footer-data{
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   margin-top: 50px;
+   margin-left: 100px;
+   
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+
+  .fa-facebook {
+    color: white;
+  }
+
+  .fa-instagram {
+    color: white;
+  }
+
+  .fa-linkedin {
+    color: white;
+  }
+  
+  .fa-twitter{
+    color: white;
+  }
+
+  .footer-icon{
+      display: flex;
+      justify-content: center;
+  }
+
+  .vl {
+    border-left: 6px solid white;
+    height: 250px;
+    margin-top:50px;
+    margin-left: 300px;
+    top: 0;
+  }
+
+.footer-a{
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    margin-left: 0;
+}
+#heading{
+  margin-left: 27px;
+}
+#gap{
+  margin-top: 10px;
+}
+
+ /* Razorpay */
+ /* .PaymentButton--rzpTheme.svelte-ekc7fv.svelte-ekc7fv::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 46px;
+  height: 100%;
+ 
+  background: #17684d;
+  border-radius: 2px 0 0 2px;
+  transform: skew(
+-15deg,0);
+}
+.razorpay-payment-button.svelte-ohbfj8 {
+position: relative;
+display: inline-block;
+display: flex;
+justify-content: center;
+-moz-osx-font-smoothing: grayscale;
+}
+.PaymentButton-text.svelte-ekc7fv.svelte-ekc7fv {
+display: block;
+min-height: 18px;
+line-height: 18px;
+font-size: 25px;
+font-weight: 800;
+opacity: 1;
+text-transform: initial;
+}
+
+.PaymentButton-securedBy.svelte-ekc7fv.svelte-ekc7fv {
+  font-size: 10px;
+  line-height: 10px;
+  text-transform: initial;
+  margin-top: 5px;
+  opacity: .6;
+}
+
+.PaymentButton.svelte-ekc7fv.svelte-ekc7fv {
+position: relative;
+display: inline-block;
+min-width: 275px;
+height: 50px;
+padding: 0;
+border-radius: 3px;
+text-align: center;
+font-style: italic;
+font-family: Muli,helvetica,sans-serif;
+font-display: swap;
+overflow: hidden;
+border: 1px solid #17684d;
+outline: none;
+cursor: pointer;
+-webkit-tap-highlight-color: #17684d;
+text-decoration: none;
+}
+
+.PaymentButton-contents.svelte-ekc7fv.svelte-ekc7fv {
+padding: 10px 28px 4px 44px;
+margin: 1px 0;
+} */
+
+
+
+@media (max-width:768px)
+{
+
+  h1{
+    font-size: 20px;
+  }
+
+   .top-none{
+     display: none;
+   }
+
+  .p1{
+    font-size: 10px;
+    width: 70%;
+    margin-left: 20px;
+    margin-top: 25px;
+    text-align: justify;
+  }
+  .p2{
+    font-size: 10px;
+    text-align: justify;
+    margin-bottom:25px ;
+  }
+
+  /*Decor */
+
+  .d-1{
+    justify-content: flex-start;
+   
+  }
+
+  .d-2{
+    justify-content: flex-end;
+   
+  }
+
+  .d-3 {
+    justify-content: flex-start;
+   
+  }
+
+  .d-1{
+    margin-bottom: 3%;
+  }
+  .d-2{
+    margin-bottom: 3%;
+  }
+
+  .img1{
+    margin-left: 10px;
+    margin-top: -10px;
+    width:30px;
+    height:27.5px;
+  }
+ 
+  .img2{
+    margin-top: -5px;
+    width: 60px;
+    height: 27.5px;
+    margin-left: -15px;
+  }
+  .img3{
+  margin-left: 10px;
+  margin-top: -10px;
+  width:30px;
+  height:27.5px;
+  }
+
+  .para1, .para2, .para3{
+    font-size: 10px;
+    width: 60%;
+  }
+
+  .png{
+    height: 195px;
+    width: 180px;
+    margin-top: -10px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+ 
+   /* Navigation */
+
+   .center{
+    width: 50px;
+    height: 70px;
+    margin-top: 0px;
+    margin-right: 0px;
+   
+  }
+  
+  
+  li {
+    float: left;
+    
+  }
+  
+  li a {
+    font-size: 7px;
+      display: block;
+      color: black;
+      padding: 7px 8px;
+      text-decoration: none;
+  }
+
+   /* Button */
+.btn {
+   -webkit-border-radius: 15;
+    -moz-border-radius: 15;
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 10px 30px;
+    letter-spacing: 1px;
+}
+
+.button{
+    margin-bottom: 20px;
+}
+
+.btn-1{
+  margin-right: 50px;
+}
+      /* footer */
+.footer-data{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: -15px;
+  margin-right: -45px;
+  
+}.footer-left{
+    
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+  font-size: 10px;
+}
+
+.vl {
+  border-left: 3px solid white;
+  height: 100px;
+  margin-top:50px;
+  margin-left: 0px;
+  margin-right: -20px;
+  top: 0;
+}
+
+
+.fa {
+   padding: 10px;
+   font-size: 15px;
+   width: 25px;
+   text-align: center;
+   text-decoration: none;
+   margin: 2.5px 1px;
+ }
+
+
+.footer-a{
+color: #fff;
+font-size: 8.5px;
+text-decoration: none;
+}
+
+
+
+#heading{
+  margin-left: 17px;
+}
+#gap{
+  margin-top: 5px;
+}
+
+#okapi-wasb-icon {
+  opacity: 0.95;
+  width: 75px;
+  height: 75px;
+}
+
+
+  /*Razorpay */
+  /* .PaymentButton--rzpTheme.svelte-ekc7fv.svelte-ekc7fv::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 46px;
+    height: 100%;
+   
+    background: #17684d;
+    border-radius: 2px 0 0 2px;
+    transform: skew(
+-15deg,0);
+}
+
+.PaymentButton-text.svelte-ekc7fv.svelte-ekc7fv {
+  display: block;
+   min-height: 18px;
+  line-height: 18px; 
+  font-size: 10px;
+  font-weight: 800;
+  opacity: 1;
+  text-transform: initial;
+}
+
+.PaymentButton-securedBy.svelte-ekc7fv.svelte-ekc7fv {
+    font-size: 5px;
+   line-height: 0px;
+    text-transform: initial;
+    margin-top: 0px;
+    opacity: .6;
+}
+
+.PaymentButton.svelte-ekc7fv.svelte-ekc7fv {
+  position: relative;
+  display: inline-block;
+  min-width: 100px;
+  height: 30px;
+  padding: 0;
+  border-radius: 3px;
+  text-align: center;
+  font-style: italic;
+  font-family: Muli,helvetica,sans-serif;
+  font-display: swap;
+  overflow: hidden;
+  border: 1px solid #17684d;
+  outline: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: #17684d;
+  text-decoration: none;
+}
+
+.PaymentButton-contents.svelte-ekc7fv.svelte-ekc7fv {
+  padding: 5px 10px 2px 19px;
+  margin: 1px 0;
+} */
+
+}
