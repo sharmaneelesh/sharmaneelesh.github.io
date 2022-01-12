@@ -1,0 +1,89 @@
+body {
+	background-color: #F5F5F5;
+}
+
+#mainbody, .navbar {
+	padding-left: 70px;
+	padding-right: 70px;
+}
+
+#verticalhr {
+	display: inline-block;
+	vertical-align: middle;
+	height: 40px;
+	width: 1px;
+	background-color: white;
+	margin-left: 7.5px;
+}
+
+#slogan {
+	display: inline-block;
+	color: white;
+	vertical-align: middle;
+	font-size: 80%;
+	line-height: 20px;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#leftbar {
+	margin-top: 50px;
+	width: 21%;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;	
+	background-color: #F4F8FB;
+	-moz-box-shadow: 0 0 5px #ccc;
+	-webkit-box-shadow: 0 0 5px #ccc;
+	box-shadow: 0 0 5px #ccc;
+	float: left;
+}
+
+#mainbar {
+	margin-top: 50px;
+	width: 77%;
+	background-color: white;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 10px;
+	min-height: 490px;
+	-moz-box-shadow: 0 0 5px #ccc;
+	-webkit-box-shadow: 0 0 5px #ccc;
+	box-shadow: 0 0 5px #ccc;
+	float: right;
+	margin-bottom: 50px;
+}
+
+#dashboardoptions {
+	text-align: left;
+	color: white;
+	margin-top: 12px;
+	line-height: 40px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+#options {
+	color: black;
+}
+
+#dashboardData{
+	text-align: center;
+	padding-left: 60px;
+}
+
+.dashdiv {
+	width: 200px;
+	height: 200px;
+	-moz-box-shadow: 0 0 5px #ccc;
+	-webkit-box-shadow: 0 0 5px #ccc;
+	box-shadow: 0 0 5px #ccc;
+	float: left;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	
+}

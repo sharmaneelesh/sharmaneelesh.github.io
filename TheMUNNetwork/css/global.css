@@ -1,0 +1,107 @@
+body { 
+  background: url("/media/background.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#mainbody {
+	display: block;
+	margin-top: 10px;
+	margin-left:auto;
+	margin-right: auto;
+	width: 92%;
+	color: white;
+}
+
+.navbar {
+	margin-top: 15px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-bottom: 25px;
+}
+
+#verticalhr {
+	display: inline-block;
+	vertical-align: middle;
+	height: 40px;
+	width: 1px;
+	background-color: white;
+	margin-left: 15px;
+}
+
+#slogan {
+	display: inline-block;
+	color: white;
+	vertical-align: middle;
+	font-size: 80%;
+	line-height: 20px;
+}
+
+
+#register {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: purple;
+	width: 40%;
+	padding: 10px;
+}
+
+.regoptions {
+	margin-bottom: 5px;
+}
+
+#signinnow {
+	margin-left: 15px;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#registernow {
+	border: none;
+	color: white;
+}
+
+#heading {
+	margin-left: 45px;
+	margin-top: 70px;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+#homeoptions {
+	margin-top: 30px;
+	margin-left: 95px;
+}
+
+.btn-group {
+	margin-top: 27px;
+	margin-bottom: 30px;
+}
+
+#searchnow {
+	margin-top: 15px;
+}
+
+#homeoptions1 {
+	width: 400px;
+}
+
+#homeoptions2 {
+	display: none;
+	width: 400px;
+}
+
+#homeoptions3 {
+	display: none;
+	margin-left: 20px;
+}
+
+a>h5 {
+	color: white;
+}
