@@ -1,0 +1,445 @@
+@media (min-width: 575.98px) {
+	
+	#mainbody {
+		background-image: url("media/pattern.png");
+		max-width: 100vw;
+		overflow: hidden;
+	}
+
+	#div1 {
+		height: 100vh;
+		width: 100%;
+		background-color: #0d0d0d;
+	}
+
+	header {
+		position: fixed;
+		height: 124px;
+		width: 100%;
+		background-color: #0d0d0d;
+		z-index: 99;
+		opacity: 0;
+	}
+
+	#mainlogo {
+		position: absolute;
+		max-width: 60%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 9999;
+	}
+
+	#div2 {
+		height: 100vh;
+		width: 100%;
+		position: relative;
+	}
+
+	#welcomehex {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: none;
+	}
+
+	#welcometext {
+		text-align: center;
+		position: absolute;
+		font-family: 'Kelly Slab', cursive;
+		color: #d4af37;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: none;
+		
+	}
+
+	#welcomelogo {
+		max-height: 2em;
+		margin-top: 20px;
+	}
+
+	#welcomechevron {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	@-moz-keyframes blink {
+		0% {
+			opacity:1;
+		}
+		50% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	} 
+
+	@-webkit-keyframes blink {
+		0% {
+			opacity:1;
+		}
+		50% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	}
+
+	@-ms-keyframes blink {
+		0% {
+			opacity:1;
+		}
+		50% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	} 
+
+	@keyframes blink {
+		0% {
+			opacity:1;
+		}
+		50% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	} 
+
+	.blinking-image {
+		-moz-animation: blink normal 4s infinite ease-in-out; /* Firefox */
+		-webkit-animation: blink normal 4s infinite ease-in-out; /* Webkit */
+		-ms-animation: blink normal 4s infinite ease-in-out; /* IE */
+		animation: blink normal 4s infinite ease-in-out; /* Opera and prob css3 final iteration */
+	}
+
+	#div3 {
+		height: 100vh;
+		width: 100%;
+		background-image: inherit;
+		background-color: #0d0d0d;
+		background-blend-mode: luminosity;
+		position: relative;
+	}
+
+	#hexes {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 90%;
+	}
+	
+	#hexs {
+		display: none;
+	}
+
+	#div4 {
+		width: 100%;
+		text-align: center;
+		color: #D4AF37;
+		font-family: 'Jost', sans-serif;
+		background-image: inherit;
+		background-position: 4.5vw 298vh;
+	}
+	
+	#visiontext {
+		font-family: 'Crimson Text', serif;
+	}
+
+	#visionhex {
+		max-height: 1.5em;
+	}
+
+	#contactus {
+		margin-top: 35px;
+		padding-left: 15%;
+		padding-right: 15%;
+		font-size: 120%;
+	}
+	
+	#rowm {
+		display: none;
+	}
+
+	#name {
+		margin-bottom: 8px;
+	}
+
+	#phone {
+		margin-bottom: 8px;
+	}
+		
+	#email {
+		margin-bottom: 8px;
+	}
+
+	a {
+		color: white;
+	}
+	
+	.icon {
+		height: 1em;
+	}
+
+	.btn:focus {
+	  outline: none;
+	  box-shadow: none;
+	}
+
+	#footer {
+		background-color: #BEA152;
+		padding-left: 50px;
+		color: black;
+		margin-top: 25px;
+		text-align: left;
+	}
+	
+}
+
+@media (max-width: 575.98px) {
+	
+	#mainbody {
+		background-image: url("media/pattern.png");
+		max-width: 100vw;
+		overflow: hidden;
+	}
+
+	#div1 {
+		height: 100vh;
+		width: 100%;
+		background-color: #0d0d0d;
+	}
+
+	header {
+		position: fixed;
+		height: 124px;
+		width: 100%;
+		background-color: #0d0d0d;
+		z-index: 99;
+		opacity: 0;
+	}
+
+	#mainlogo {
+		position: absolute;
+		max-width: 60%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 9999;
+	}
+
+	#div2 {
+		height: 100vh;
+		width: 100%;
+		position: relative;
+	}
+
+	#welcomehex {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: none;
+		max-width: 78%;
+	}
+
+	#welcometext {
+		text-align: center;
+		position: absolute;
+		font-family: 'Kelly Slab', cursive;
+		color: #d4af37;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: none;
+		font-size: 200%;
+	}
+
+	#welcomelogo {
+		max-height: 2em;
+		margin-top: 20px;
+	}
+
+	#welcomechevron {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 78%;
+	}
+
+	@-moz-keyframes blink {
+		0% {
+			opacity:1;
+		}
+		50% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	} 
+
+	@-webkit-keyframes blink {
+		0% {
+			opacity:1;
+		}
+		50% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	}
+
+	@-ms-keyframes blink {
+		0% {
+			opacity:1;
+		}
+		50% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	} 
+
+	@keyframes blink {
+		0% {
+			opacity:1;
+		}
+		50% {
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	} 
+
+	.blinking-image {
+		-moz-animation: blink normal 4s infinite ease-in-out; /* Firefox */
+		-webkit-animation: blink normal 4s infinite ease-in-out; /* Webkit */
+		-ms-animation: blink normal 4s infinite ease-in-out; /* IE */
+		animation: blink normal 4s infinite ease-in-out; /* Opera and prob css3 final iteration */
+	}
+
+	#div3 {
+		height: 100vh;
+		width: 100%;
+		background-image: inherit;
+		background-color: #0d0d0d;
+		background-blend-mode: luminosity;
+		position: relative;
+	}
+
+	#hexes {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 90%;
+		display: none;
+	}
+	
+	#hexs {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 78%;
+	}
+	
+	.imghexes {
+		max-height: 1.5em;
+	}
+
+	#div4 {
+		width: 100%;
+		text-align: center;
+		color: #D4AF37;
+		font-family: 'Jost', sans-serif;
+		background-image: inherit;
+		background-position: 4.5vw 298vh;
+		max-height: 100%;
+	}
+	
+	#linebreaks {
+		display: none;
+	}
+	
+	#visiontext {
+		font-family: 'Crimson Text', serif;
+		font-size: 200%;
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+
+	#visionhex {
+		max-height: 1.5em;
+		transform: translateY(-18.55%);
+	}
+	
+	#visiontext2 {
+		font-size: 137%;
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+
+	#contactus {
+		margin-top: 35px;
+		padding-left: 15%;
+		padding-right: 15%;
+		font-size: 120%;
+	}
+	
+	#row {
+		display: none;
+	}
+
+	#name {
+		margin-bottom: 8px;
+	}
+
+	#phone {
+		margin-bottom: 8px;
+	}
+		
+	#email {
+		margin-bottom: 8px;
+	}
+
+	a {
+		color: white;
+	}
+	
+	.icon {
+		height: 1em;
+	}
+
+	.btn:focus {
+	  outline: none;
+	  box-shadow: none;
+	}
+
+	#footer {
+		background-color: #BEA152;
+		padding-left: 25px;
+		color: black;
+		margin-top: 25px;
+		text-align: left;
+		font-size: 95%;
+	}
+	
+}
+

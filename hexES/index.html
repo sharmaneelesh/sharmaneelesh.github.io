@@ -1,0 +1,177 @@
+<?php
+	
+	if($_POST) {
+	
+		$emailTo = "info@hexesports.net";
+		$subject = "Contact Form - ".$_POST["name"]." ".$_POST["phone"];
+		$body = $_POST["messageQuery"];
+		$headers = $_POST["email"];
+		
+		mail($emailTo, $subject, $body, $headers);
+		
+		header("Location: http://hexesports.net");
+
+	}
+	
+?> 
+
+<!doctype html>
+
+<html lang="en">
+
+	<head>
+	
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-167624970-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-167624970-1');
+		</script>
+
+		
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="HEX is the leading strategy consulting agency dedicated to esports entertainment. Our vision at HEX is to connect clients, fans and sponsors.">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="icon" type="image/png" href="media/hexico.png">
+
+		<title>HEX | HOME</title>
+		
+		<link rel="stylesheet" href="global.css">
+		
+		<link href="https://fonts.googleapis.com/css2?family=Kelly+Slab&family=Jost&family=Crimson+Text:ital@1&family=PT+Sans&display=swap" rel="stylesheet">
+		
+	</head>
+	
+	<body>
+		
+		<div id="mainbody">
+		
+			<div id="div1">
+				<header></header>
+				<img src="media/logo.png" id="mainlogo">
+			</div>
+			
+			<div id="div2">
+				<img src="media/hex.png" id="welcomehex">
+				<h1 id="welcometext">WELCOME to<br><a href="#contactuspage"><img src="media/logot.png" id="welcomelogo"></a></h1>
+				<img src="media/chevron2.png" id="welcomechevron" class="blinking-image">
+			</div>
+			
+			<div id="div3">
+				<img src="media/hexes.png" id="hexes">
+				<img src="media/hexs.png" id="hexs">
+			</div>
+			
+			<div id="div4">
+				<a name="contactuspage"></a>
+				<span id="linebreaks"><br><br><br><br></span>
+				<h1 id="visiontext">'Our vision at &nbsp;<img src="media/logot.png" id="visionhex"> is to connect clients, fans and sponsors.'</h1>
+				<br>
+				<h4 id="visiontext2">To learn more about what we do, how to join us,<br>or with any general inquiry<br></h4>
+<!--				<br>
+				<h2 id="visiontext3">Write to us:</h2>-->
+				<div id="contactus" class="container-fluid">
+					<div class="row" id="row">
+						<div class="col-md-3">
+							Hakan Habibi:
+							<a href="mailto: hakan.habibi@hexesports.net">hakan.habibi@hexesports.net</a><br><br>
+						</div>
+						<div class="container-fluid col-md-6">
+							<button type="button" id="reachnow" class="btn-md btn-info" data-toggle="modal" data-target="#registerModal"><strong>CONNECT WITH US</strong></button><br><br>
+						</div>
+						<div class="col-md-3">
+							Mehrdad Morsali:
+							<a href="mailto: mehrdad.morsali@hexesports.net">mehrdad.morsali@hexesports.net</a>
+						</div>
+					</div>
+					<div class="row" id="rowm">
+						<div class="col-md-3">
+							Hakan Habibi:
+							<a href="mailto: hakan.habibi@hexesports.net">hakan.habibi@hexesports.net</a><br>
+						</div>
+						<div class="col-md-3">
+							Mehrdad Morsali:
+							<a href="mailto: mehrdad.morsali@hexesports.net">mehrdad.morsali@hexesports.net</a><br><br>
+						</div>
+						<div class="container-fluid col-md-6">
+							<button type="button" id="reachnow" class="btn-md btn-info" data-toggle="modal" data-target="#registerModal"><strong>CONNECT WITH US</strong></button><br>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="footer">
+			Copyright &copy; 2020 hexesports. All rights reserved.
+			</div>
+			
+			<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered" role="document" style="width: 350px;">
+				<div class="modal-content">
+				
+				  <div class="modal-header text-center" style="background-color: #212121; color: white;">
+					
+					<h5>Reach us now.</h5>
+					
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>
+				  
+				  <form method="post">
+				  <div class="modal-body" style="background-color: #212121; color: white; text-align: center;">
+					
+						<div class="input-group flex-nowrap" id="name">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="addon-wrapping"><img src="media/name.png" class="icon"></span>
+							</div>
+						  <input type="text" class="form-control" placeholder="Name" name="name" required>
+						</div>
+						<div class="input-group flex-nowrap" id="phone">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="addon-wrapping"><img src="media/phone.png" class="icon"></span>
+							</div>
+						  <input type="email" class="form-control" placeholder="Phone Number" name="phone" required>
+						</div>
+						<div class="input-group flex-nowrap" id="email">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="addon-wrapping"><img src="media/email.png" class="icon"></span>
+							</div>
+						  <input type="email" class="form-control" placeholder="Email" name="email" required>
+						</div>
+						<textarea rows="4" type="text" class="form-control" placeholder="Message/query..." id="messageQuery" name="messageQuery" required></textarea>
+					
+						
+				  </div>
+				  
+				  <div class="modal-footer" style="background-color: #212121; color: white">
+					<button type="submit" class="btn btn-success" id="submit" name="submit">Submit</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				  </div>
+				  
+				  </form>
+				  
+				</div>
+			  </div>
+			</div>
+		
+		</div>
+		
+		
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript" src="global.js"></script>
+		
+	</body>
+  
+</html>

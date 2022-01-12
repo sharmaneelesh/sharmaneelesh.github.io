@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+		<link rel="manifest" href="https://www.cvleaderboard.org/site.webmanifest">
+		
+		<title>Coronavirus Cases In California | Per Capita | Doubling Time | Case Fatality Rate</title>
+		
+		<script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+		<script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+		<style>
+			canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			}
+		</style>
+		
+	</head>
+  
+	<body>
+	
+		<p style="font-family: Arial, Helvetica, sans-serif;text-align:center;font-size:small">There are 3 charts below so keep scrolling down or click the following links to jump to <a href="#DoublingTime">doubling time</a>, <a href="#PerCapita">cases per 100,000 people (per capita)</a> or <a href="#CaseFatalityRate">case fatality rate</a>.</p>
+	
+		<a id="DoublingTime"></a>
+		<div id="container" style="width: 100%;">
+			<canvas id="canvas" height="700"></canvas>
+		</div>
+		
+		<a id="PerCapita"></a>
+		<div id="container" style="width: 100%;">
+			<canvas id="canvas2" height="700"></canvas>
+		</div>
+		
+		<a id="CaseFatalityRate"></a>
+		<div id="container" style="width: 100%;">
+			<canvas id="canvas3" height="700"></canvas>
+		</div>
+		
+		<script>
+			
+			function myFunction(x) {
+			  if (x.matches) { 
+				var deviceWidth = document.getElementById("canvas");
+				deviceWidth.setAttribute("height", "700");
+			  } else {
+				var deviceWidth = document.getElementById("canvas");
+				deviceWidth.setAttribute("height", "400");
+				var deviceWidth = document.getElementById("canvas2");
+				deviceWidth.setAttribute("height", "400");
+				var deviceWidth = document.getElementById("canvas3");
+				deviceWidth.setAttribute("height", "400");
+			  }
+			}
+
+			var x = window.matchMedia("(max-width: 700px)")
+			myFunction(x);
+			x.addListener(myFunction);
+
+			
+			
+			var color = Chart.helpers.color;
+			var horizontalBarChartData = {
+				labels: [
+							'Mendocino', 
+							'Kings', 
+							'Del Norte', 
+							'Tuolumne', 
+							'San Diego', 
+							'Stanislaus', 
+							'Orange', 
+							'Kern', 
+							'San Bernardino', 
+							'Monterey', 
+							'Los Angeles', 
+							'San Luis Obispo', 
+							'Tulare', 
+							'Shasta', 
+							'Riverside', 
+							'Alameda', 
+							'Fresno', 
+							'Imperial', 
+							'San Francisco, City and County', 
+							'Alpine', 
+							'Amador', 
+							'Butte', 
+							'Calaveras', 
+							'Colusa', 
+							'Contra Costa', 
+							'El Dorado', 
+							'Glenn', 
+							'Humboldt', 
+							'Inyo', 
+							'Lake', 
+							'Madera', 
+							'Marin', 
+							'Merced', 
+							'Mono', 
+							'Napa', 
+							'Nevada', 
+							'Placer', 
+							'Plumas', 
+							'Sacramento', 
+							'San Benito', 
+							'San Joaquin', 
+							'San Mateo', 
+							'Santa Barbara', 
+							'Santa Clara', 
+							'Santa Cruz', 
+							'Siskiyou', 
+							'Solano', 
+							'Sonoma', 
+							'Sutter', 
+							'Tehama', 
+							'Ventura', 
+							'Yolo', 
+							'Yuba'
+						],
+				datasets: 
+				[
+					{
+						label: 'Days to double current count',
+						backgroundColor: color(window.chartColors.green).alpha(1).rgbString(),
+						data: [
+								2.6, 
+								3.2, 
+								5.1, 
+								5.1, 
+								14.8, 
+								15.9, 
+								16.4, 
+								16.5, 
+								18.4, 
+								19, 
+								19, 
+								19.3, 
+								19.5, 
+								19.7, 
+								20.4, 
+								21.2, 
+								23.4, 
+								26.4, 
+								26.6, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28, 
+								28
+							]
+					}
+				]
+
+			};
+			
+			var horizontalBarChartData2 = {
+				labels: [
+							'Los Angeles',
+							'Mono',
+							'San Francisco, City and County',
+							'Riverside',
+							'Imperial',
+							'San Mateo',
+							'Tulare',
+							'Santa Clara',
+							'Santa Barbara',
+							'Inyo',
+							'San Diego',
+							'Kern',
+							'Alameda',
+							'Alpine',
+							'Marin',
+							'San Bernardino',
+							'San Benito',
+							'Yolo',
+							'Contra Costa',
+							'San Joaquin',
+							'Sacramento',
+							'Orange',
+							'Ventura',
+							'San Luis Obispo',
+							'Stanislaus',
+							'Fresno',
+							'Solano',
+							'Sonoma',
+							'Napa',
+							'Santa Cruz',
+							'Kings',
+							'Monterey',
+							'Humboldt',
+							'Merced',
+							'Nevada',
+							'Placer',
+							'Sutter',
+							'Calaveras',
+							'Madera',
+							'El Dorado',
+							'Plumas',
+							'Yuba',
+							'Glenn',
+							'Amador',
+							'Shasta',
+							'Colusa',
+							'Mendocino',
+							'Siskiyou',
+							'Del Norte',
+							'Lake',
+							'Butte',
+							'Tuolumne',
+							'Tehama'
+						],
+				datasets: 
+				[
+					{
+						label: 'Cases per 100,000 people',
+						backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+						data: [
+							194.5, 
+							166.2, 
+							160.1, 
+							144.2, 
+							138.5, 
+							132.9, 
+							108.1, 
+							108.1, 
+							105.5, 
+							105.3, 
+							91.2, 
+							89.9, 
+							89.1, 
+							88.6, 
+							86.5, 
+							80.3, 
+							74.8, 
+							73, 
+							70.8, 
+							68.6, 
+							66.8, 
+							65.3, 
+							58.7, 
+							58.6, 
+							53.4, 
+							45.8, 
+							45.6, 
+							44.5, 
+							44.3, 
+							43.9, 
+							43.8, 
+							42.2, 
+							39.1, 
+							37.8, 
+							37.1, 
+							35.4, 
+							29.9, 
+							28.3, 
+							26.1, 
+							21.8, 
+							21.3, 
+							20.3, 
+							17.6, 
+							17.6, 
+							16.7, 
+							13.9, 
+							12.7, 
+							11.5, 
+							10.8, 
+							9.3, 
+							7.3, 
+							5.5, 
+							1.5
+							]
+					}
+				]
+
+			};
+			
+			var horizontalBarChartData3 = {
+				labels: [
+							'Tehama', 
+							'Shasta', 
+							'Yolo', 
+							'Sutter', 
+							'Yuba', 
+							'Tulare', 
+							'Placer', 
+							'Marin', 
+							'Inyo', 
+							'Santa Clara', 
+							'San Joaquin', 
+							'San Bernardino', 
+							'Los Angeles', 
+							'Madera', 
+							'San Mateo', 
+							'San Benito', 
+							'Sacramento', 
+							'San Diego', 
+							'Riverside', 
+							'Mono', 
+							'Alameda', 
+							'Ventura', 
+							'Napa', 
+							'Contra Costa', 
+							'Merced', 
+							'Nevada', 
+							'Imperial', 
+							'Stanislaus', 
+							'Monterey', 
+							'Orange', 
+							'Solano', 
+							'Santa Cruz', 
+							'San Francisco, City and County', 
+							'Santa Barbara', 
+							'Fresno', 
+							'Kings', 
+							'Sonoma', 
+							'Kern', 
+							'San Luis Obispo', 
+							'Siskiyou', 
+							'Del Norte', 
+							'Calaveras', 
+							'Humboldt', 
+							'Glenn', 
+							'El Dorado', 
+							'Tuolumne', 
+							'Butte', 
+							'Lake', 
+							'Plumas', 
+							'Alpine', 
+							'Mendocino', 
+							'Amador', 
+							'Colusa'
+						],
+				datasets: 
+				[
+					{
+						label: 'Per cent mortality rate',
+						backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+						data: [
+							100, 
+							13.33, 
+							9.94, 
+							6.9, 
+							6.25, 
+							6.02, 
+							5.59, 
+							5.33, 
+							5, 
+							4.94, 
+							4.74, 
+							4.68, 
+							4.61, 
+							4.55, 
+							4.26, 
+							4.17, 
+							3.92, 
+							3.92, 
+							3.87, 
+							3.85, 
+							3.69, 
+							3.34, 
+							3.08, 
+							3.01, 
+							2.73, 
+							2.56, 
+							2.46, 
+							2.24, 
+							2.16, 
+							1.88, 
+							1.73, 
+							1.61, 
+							1.61, 
+							1.49, 
+							1.41, 
+							1.41, 
+							0.9, 
+							0.6, 
+							0.59, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0, 
+							0
+							]
+					}
+				]
+
+			};
+
+			window.onload = function() {
+				
+				var ctx = document.getElementById('canvas').getContext('2d');
+				window.myHorizontalBar = new Chart(ctx, {
+					type: 'horizontalBar',
+					data: horizontalBarChartData,
+					options: {
+						maintainAspectRatio: true,
+						elements: {
+							rectangle: {
+								borderWidth: 0,
+							}
+						},
+						responsive: true,
+						legend: {
+							display: false
+						},
+						title: {
+							display: true,
+							text: ['Current Doubling Times In California', '(Updated 23 hours ago on Monday, April 27, 7:00am)', 'Longer bars are better (it takes more days for cases to double)', 'Shorter bars are worse (less days to double).'],
+							fontStyle: 'bold',
+							fontColor: '#000'
+						},
+						scales: {
+						  yAxes: [{
+							  beginAtZero: true,
+							  ticks: {
+								 autoSkip: false
+							  }
+						  }]
+						}
+					}
+				});
+				
+				var ctx = document.getElementById('canvas2').getContext('2d');
+				window.myHorizontalBar = new Chart(ctx, {
+					type: 'horizontalBar',
+					data: horizontalBarChartData2,
+					options: {
+						maintainAspectRatio: true,
+						elements: {
+							rectangle: {
+								borderWidth: 0,
+							}
+						},
+						responsive: true,
+						legend: {
+							display: false
+						},
+						title: {
+							display: true,
+							text: ['Current Cases Per 100,000 People In California', '(Updated 13 minutes ago on Tuesday, April 28, 6:45am)', 'Shorter bars are better (less cases)', 'Longer bars are worse (more cases)'],
+							fontStyle: 'bold',
+							fontColor: '#000'
+						},
+						scales: {
+						  yAxes: [{
+							  beginAtZero: true,
+							  ticks: {
+								 autoSkip: false
+							  }
+						  }]
+						}
+					}
+				});
+				
+				var ctx = document.getElementById('canvas3').getContext('2d');
+				window.myHorizontalBar = new Chart(ctx, {
+					type: 'horizontalBar',
+					data: horizontalBarChartData3,
+					options: {
+						maintainAspectRatio: true,
+						elements: {
+							rectangle: {
+								borderWidth: 0,
+							}
+						},
+						responsive: true,
+						legend: {
+							display: false
+						},
+						title: {
+							display: true,
+							text: ['Current Mortality Rate (CFR) In California', '(Updated 13 minutes ago on Tuesday, April 28, 6:45am)', 'Shorter bars are better (less fatalities)', 'Longer bars are worse (more fatalities)'],
+							fontStyle: 'bold',
+							fontColor: '#000'
+						},
+						scales: {
+						  yAxes: [{
+							  beginAtZero: true,
+							  ticks: {
+								 autoSkip: false
+							  }
+						  }]
+						}
+					}
+				});
+
+			};
+
+		</script>
+	
+	</body>
+
+</html>

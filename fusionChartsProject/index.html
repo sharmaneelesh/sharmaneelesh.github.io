@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16x16.png">
+		<link rel="manifest" href="https://www.cvleaderboard.org/site.webmanifest">
+		
+		<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			  gtag('config', 'UA-164225258-1');
+		</script>
+		
+		<style>
+			@media screen and (min-width: 300px) {
+				#chart-outer-container1,
+				#chart-outer-container2,
+				#chart-outer-container3 {padding-top:340%; width:95%;}
+			}
+
+			@media screen and (min-width: 700px) {
+				#chart-outer-container1,
+				#chart-outer-container2,
+				#chart-outer-container3  {padding-top:160%; width:98%;}
+			}
+
+			@media screen and (min-width: 1000px) {
+				#chart-outer-container1,
+				#chart-outer-container2,
+				#chart-outer-container3  {padding-top:100%; width:100%;}
+			}
+
+			@media screen and (min-width: 1600px) {
+				#chart-outer-container1,
+				#chart-outer-container2,
+				#chart-outer-container3  {padding-top:60%; width:100%;}
+			}
+			/* Indication hand */
+			.hand {
+			  position: absolute;
+			  top: 50%;
+			  right: 10px;
+			  width: 24px;
+			  height: 24px;
+			  transition: all .3s linear;
+			  display: none;
+			  z-index:999
+			}
+			.hand img {
+			  width: 100%;
+			}
+			.animate {
+			  animation: scrolling 1.2s infinite;
+			  animation-delay: 400ms;
+			  transition: all .3s linear;
+			}
+			.enter {
+			  right: -100px;
+			  transition: all .3s linear;
+			}
+			@media (max-width: 768px) {
+			  .show-xs {
+				display: block;
+			  }
+			} 
+			@keyframes scrolling {
+				0% {
+				  transform: translateY(0)
+				}
+				50% {
+				  transform: translateY(-50px)
+				}
+				100% {
+				  transform: translateY(0)
+				}
+			}
+			/* Indication hand */        
+		</style>
+
+		<script src="https://www.cvleaderboard.org/fc/js/fusioncharts.js"></script>
+		<script src="https://www.cvleaderboard.org/fc/js/themes/fusioncharts.theme.fusion.js"></script>
+
+		<script>
+
+			const dataSource = {
+					chart: {
+					caption: "Current Doubling Times In California<br>(Updated 14 hours ago on Monday, April 27, 7:00am)",
+					subcaption: "Longer bars are better (it takes more days for cases to double)<br>Shorter bars are worse (less days to double).",
+					yaxisname: "Days to double the current case count (based on most recent 3 days)",
+					aligncaptionwithcanvas: "0",
+					theme: "fusion",
+					exportEnabled: 1    
+				},
+
+				data: [
+					   {labelLink:"/USA/california/mendocino-county/", color:"#d10000", label: "Mendocino",value: "2.6",toolText:"<b>2.6</b> days to double current count<br><b>11</b> current cases"},
+					   {labelLink:"/USA/california/kings-county/", color:"#d10900", label: "Kings",value: "3.2",toolText:"<b>3.2</b> days to double current count<br><b>67</b> current cases"},
+					   {labelLink:"/USA/california/del-norte-county/", color:"#d12900", label: "Del Norte",value: "5.1",toolText:"<b>5.1</b> days to double current count<br><b>3</b> current cases"},
+					   {labelLink:"/USA/california/tuolumne-county/", color:"#d12900", label: "Tuolumne",value: "5.1",toolText:"<b>5.1</b> days to double current count<br><b>3</b> current cases"},
+					   {labelLink:"/USA/california/san-diego-county/", color:"#d1c900", label: "San Diego",value: "14.8",toolText:"<b>14.8</b> days to double current count<br><b>3,043</b> current cases"},
+					   {labelLink:"/USA/california/stanislaus-county/", color:"#c8d100", label: "Stanislaus",value: "15.9",toolText:"<b>15.9</b> days to double current count<br><b>294</b> current cases"},
+					   {labelLink:"/USA/california/orange-county/", color:"#bfd100", label: "Orange",value: "16.4",toolText:"<b>16.4</b> days to double current count<br><b>2,074</b> current cases"},
+					   {labelLink:"/USA/california/kern-county/", color:"#bed100", label: "Kern",value: "16.5",toolText:"<b>16.5</b> days to double current count<br><b>809</b> current cases"},
+					   {labelLink:"/USA/california/san-bernardino-county/", color:"#9ed100", label: "San Bernardino",value: "18.4",toolText:"<b>18.4</b> days to double current count<br><b>1,751</b> current cases"},
+					   {labelLink:"/USA/california/monterey-county/", color:"#94d100", label: "Monterey",value: "19",toolText:"<b>19</b> days to double current count<br><b>183</b> current cases"},
+					   {labelLink:"/USA/california/los-angeles-county/", color:"#94d100", label: "Los Angeles",value: "19",toolText:"<b>19</b> days to double current count<br><b>19,528</b> current cases"},
+					   {labelLink:"/USA/california/san-luis-obispo-county/", color:"#8fd100", label: "San Luis Obispo",value: "19.3",toolText:"<b>19.3</b> days to double current count<br><b>166</b> current cases"},
+					   {labelLink:"/USA/california/tulare-county/", color:"#8cd100", label: "Tulare",value: "19.5",toolText:"<b>19.5</b> days to double current count<br><b>504</b> current cases"},
+					   {labelLink:"/USA/california/shasta-county/", color:"#89d100", label: "Shasta",value: "19.7",toolText:"<b>19.7</b> days to double current count<br><b>30</b> current cases"},
+					   {labelLink:"/USA/california/riverside-county/", color:"#7dd100", label: "Riverside",value: "20.4",toolText:"<b>20.4</b> days to double current count<br><b>3,563</b> current cases"},
+					   {labelLink:"/USA/california/alameda-county/", color:"#70d100", label: "Alameda",value: "21.2",toolText:"<b>21.2</b> days to double current count<br><b>1,489</b> current cases"},
+					   {labelLink:"/USA/california/fresno-county/", color:"#4cd100", label: "Fresno",value: "23.4",toolText:"<b>23.4</b> days to double current count<br><b>458</b> current cases"},
+					   {labelLink:"/USA/california/imperial-county/", color:"#1ad100", label: "Imperial",value: "26.4",toolText:"<b>26.4</b> days to double current count<br><b>251</b> current cases"},
+					   {labelLink:"/USA/california/san-francisco,-city-and-county-of/", color:"#17d100", label: "San Francisco, City and County",value: "26.6",toolText:"<b>26.6</b> days to double current count<br><b>1,411</b> current cases"},
+					   {labelLink:"/USA/california/alpine-county/", color:"#00d100", label: "Alpine",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>1</b> current cases"},
+					   {labelLink:"/USA/california/amador-county/", color:"#00d100", label: "Amador",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>7</b> current cases"},
+					   {labelLink:"/USA/california/butte-county/", color:"#00d100", label: "Butte",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>16</b> current cases"},
+					   {labelLink:"/USA/california/calaveras-county/", color:"#00d100", label: "Calaveras",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>13</b> current cases"},
+					   {labelLink:"/USA/california/colusa-county/", color:"#00d100", label: "Colusa",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>3</b> current cases"},
+					   {labelLink:"/USA/california/contra-costa-county/", color:"#00d100", label: "Contra Costa",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>817</b> current cases"},
+					   {labelLink:"/USA/california/el-dorado-county/", color:"#00d100", label: "El Dorado",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>42</b> current cases"},
+					   {labelLink:"/USA/california/glenn-county/", color:"#00d100", label: "Glenn",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>5</b> current cases"},
+					   {labelLink:"/USA/california/humboldt-county/", color:"#00d100", label: "Humboldt",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>53</b> current cases"},
+					   {labelLink:"/USA/california/inyo-county/", color:"#00d100", label: "Inyo",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>19</b> current cases"},
+					   {labelLink:"/USA/california/lake-county/", color:"#00d100", label: "Lake",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>6</b> current cases"},
+					   {labelLink:"/USA/california/madera-county/", color:"#00d100", label: "Madera",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>41</b> current cases"},
+					   {labelLink:"/USA/california/marin-county/", color:"#00d100", label: "Marin",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>224</b> current cases"},
+					   {labelLink:"/USA/california/merced-county/", color:"#00d100", label: "Merced",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>105</b> current cases"},
+					   {labelLink:"/USA/california/mono-county/", color:"#00d100", label: "Mono",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>24</b> current cases"},
+					   {labelLink:"/USA/california/napa-county/", color:"#00d100", label: "Napa",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>61</b> current cases"},
+					   {labelLink:"/USA/california/nevada-county/", color:"#00d100", label: "Nevada",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>37</b> current cases"},
+					   {labelLink:"/USA/california/placer-county/", color:"#00d100", label: "Placer",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>141</b> current cases"},
+					   {labelLink:"/USA/california/plumas-county/", color:"#00d100", label: "Plumas",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>4</b> current cases"},
+					   {labelLink:"/USA/california/sacramento-county/", color:"#00d100", label: "Sacramento",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>1,037</b> current cases"},
+					   {labelLink:"/USA/california/san-benito-county/", color:"#00d100", label: "San Benito",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>47</b> current cases"},
+					   {labelLink:"/USA/california/san-joaquin-county/", color:"#00d100", label: "San Joaquin",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>523</b> current cases"},
+					   {labelLink:"/USA/california/san-mateo-county/", color:"#00d100", label: "San Mateo",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>1,019</b> current cases"},
+					   {labelLink:"/USA/california/santa-barbara-county/", color:"#00d100", label: "Santa Barbara",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>471</b> current cases"},
+					   {labelLink:"/USA/california/santa-clara-county/", color:"#00d100", label: "Santa Clara",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>2,084</b> current cases"},
+					   {labelLink:"/USA/california/santa-cruz-county/", color:"#00d100", label: "Santa Cruz",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>120</b> current cases"},
+					   {labelLink:"/USA/california/siskiyou-county/", color:"#00d100", label: "Siskiyou",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>5</b> current cases"},
+					   {labelLink:"/USA/california/solano-county/", color:"#00d100", label: "Solano",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>204</b> current cases"},
+					   {labelLink:"/USA/california/sonoma-county/", color:"#00d100", label: "Sonoma",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>220</b> current cases"},
+					   {labelLink:"/USA/california/sutter-county/", color:"#00d100", label: "Sutter",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>29</b> current cases"},
+					   {labelLink:"/USA/california/tehama-county/", color:"#00d100", label: "Tehama",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>1</b> current cases"},
+					   {labelLink:"/USA/california/ventura-county/", color:"#00d100", label: "Ventura",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>497</b> current cases"},
+					   {labelLink:"/USA/california/yolo-county/", color:"#00d100", label: "Yolo",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>161</b> current cases"},
+					   {labelLink:"/USA/california/yuba-county/", color:"#00d100", label: "Yuba",value: "28",toolText:"More than <b>28</b> days to double current count<br><b>16</b> current cases"}
+
+				]
+			};
+
+
+			const dataSource2 = {
+					chart: {
+						caption: "Current Cases Per 100,000 People In California<br>(Updated 14 hours ago on Monday, April 27, 7:00am)",
+						subcaption: "Shorter bars are better (less cases)<br>Longer bars are worse (more cases)",
+						yaxisname: "Cases per 100,000 people (per capita)",
+						aligncaptionwithcanvas: "0",
+						theme: "fusion",
+						exportEnabled: 1
+					},
+
+
+					data: [
+						{labelLink:"/USA/california/los-angeles-county/", color:"#d10000", label: "Los Angeles",value: "194.5",toolText:"<b>195</b> cases per 100,000 people<br><b>19,528</b> current cases"},
+						{labelLink:"/USA/california/mono-county/", color:"#d13d00", label: "Mono",value: "166.2",toolText:"<b>166</b> cases per 100,000 people<br><b>24</b> current cases"},
+						{labelLink:"/USA/california/san-francisco,-city-and-county-of/", color:"#d14b00", label: "San Francisco, City and County",value: "160.1",toolText:"<b>160</b> cases per 100,000 people<br><b>1,411</b> current cases"},
+						{labelLink:"/USA/california/riverside-county/", color:"#d16d00", label: "Riverside",value: "144.2",toolText:"<b>144</b> cases per 100,000 people<br><b>3,563</b> current cases"},
+						{labelLink:"/USA/california/imperial-county/", color:"#d17900", label: "Imperial",value: "138.5",toolText:"<b>139</b> cases per 100,000 people<br><b>251</b> current cases"},
+						{labelLink:"/USA/california/san-mateo-county/", color:"#d18600", label: "San Mateo",value: "132.9",toolText:"<b>133</b> cases per 100,000 people<br><b>1,019</b> current cases"},
+						{labelLink:"/USA/california/tulare-county/", color:"#d1bb00", label: "Tulare",value: "108.1",toolText:"<b>108</b> cases per 100,000 people<br><b>504</b> current cases"},
+						{labelLink:"/USA/california/santa-clara-county/", color:"#d1bb00", label: "Santa Clara",value: "108.1",toolText:"<b>108</b> cases per 100,000 people<br><b>2,084</b> current cases"},
+						{labelLink:"/USA/california/santa-barbara-county/", color:"#d1c100", label: "Santa Barbara",value: "105.5",toolText:"<b>105</b> cases per 100,000 people<br><b>471</b> current cases"},
+						{labelLink:"/USA/california/inyo-county/", color:"#d1c100", label: "Inyo",value: "105.3",toolText:"<b>105</b> cases per 100,000 people<br><b>19</b> current cases"},
+						{labelLink:"/USA/california/san-diego-county/", color:"#c2d100", label: "San Diego",value: "91.2",toolText:"<b>91</b> cases per 100,000 people<br><b>3,043</b> current cases"},
+						{labelLink:"/USA/california/kern-county/", color:"#bfd100", label: "Kern",value: "89.9",toolText:"<b>90</b> cases per 100,000 people<br><b>809</b> current cases"},
+						{labelLink:"/USA/california/alameda-county/", color:"#bed100", label: "Alameda",value: "89.1",toolText:"<b>89</b> cases per 100,000 people<br><b>1,489</b> current cases"},
+						{labelLink:"/USA/california/alpine-county/", color:"#bdd100", label: "Alpine",value: "88.6",toolText:"<b>89</b> cases per 100,000 people<br><b>1</b> current cases"},
+						{labelLink:"/USA/california/marin-county/", color:"#b8d100", label: "Marin",value: "86.5",toolText:"<b>87</b> cases per 100,000 people<br><b>224</b> current cases"},
+						{labelLink:"/USA/california/san-bernardino-county/", color:"#abd100", label: "San Bernardino",value: "80.3",toolText:"<b>80</b> cases per 100,000 people<br><b>1,751</b> current cases"},
+						{labelLink:"/USA/california/san-benito-county/", color:"#9fd100", label: "San Benito",value: "74.8",toolText:"<b>75</b> cases per 100,000 people<br><b>47</b> current cases"},
+						{labelLink:"/USA/california/yolo-county/", color:"#9bd100", label: "Yolo",value: "73",toolText:"<b>73</b> cases per 100,000 people<br><b>161</b> current cases"},
+						{labelLink:"/USA/california/contra-costa-county/", color:"#96d100", label: "Contra Costa",value: "70.8",toolText:"<b>71</b> cases per 100,000 people<br><b>817</b> current cases"},
+						{labelLink:"/USA/california/san-joaquin-county/", color:"#91d100", label: "San Joaquin",value: "68.6",toolText:"<b>69</b> cases per 100,000 people<br><b>523</b> current cases"},
+						{labelLink:"/USA/california/sacramento-county/", color:"#8dd100", label: "Sacramento",value: "66.8",toolText:"<b>67</b> cases per 100,000 people<br><b>1,037</b> current cases"},
+						{labelLink:"/USA/california/orange-county/", color:"#8ad100", label: "Orange",value: "65.3",toolText:"<b>65</b> cases per 100,000 people<br><b>2,074</b> current cases"},
+						{labelLink:"/USA/california/ventura-county/", color:"#7cd100", label: "Ventura",value: "58.7",toolText:"<b>59</b> cases per 100,000 people<br><b>497</b> current cases"},
+						{labelLink:"/USA/california/san-luis-obispo-county/", color:"#7cd100", label: "San Luis Obispo",value: "58.6",toolText:"<b>59</b> cases per 100,000 people<br><b>166</b> current cases"},
+						{labelLink:"/USA/california/stanislaus-county/", color:"#70d100", label: "Stanislaus",value: "53.4",toolText:"<b>53</b> cases per 100,000 people<br><b>294</b> current cases"},
+						{labelLink:"/USA/california/fresno-county/", color:"#60d100", label: "Fresno",value: "45.8",toolText:"<b>46</b> cases per 100,000 people<br><b>458</b> current cases"},
+						{labelLink:"/USA/california/solano-county/", color:"#5fd100", label: "Solano",value: "45.6",toolText:"<b>46</b> cases per 100,000 people<br><b>204</b> current cases"},
+						{labelLink:"/USA/california/sonoma-county/", color:"#5dd100", label: "Sonoma",value: "44.5",toolText:"<b>45</b> cases per 100,000 people<br><b>220</b> current cases"},
+						{labelLink:"/USA/california/napa-county/", color:"#5dd100", label: "Napa",value: "44.3",toolText:"<b>44</b> cases per 100,000 people<br><b>61</b> current cases"},
+						{labelLink:"/USA/california/santa-cruz-county/", color:"#5cd100", label: "Santa Cruz",value: "43.9",toolText:"<b>44</b> cases per 100,000 people<br><b>120</b> current cases"},
+						{labelLink:"/USA/california/kings-county/", color:"#5cd100", label: "Kings",value: "43.8",toolText:"<b>44</b> cases per 100,000 people<br><b>67</b> current cases"},
+						{labelLink:"/USA/california/monterey-county/", color:"#58d100", label: "Monterey",value: "42.2",toolText:"<b>42</b> cases per 100,000 people<br><b>183</b> current cases"},
+						{labelLink:"/USA/california/humboldt-county/", color:"#51d100", label: "Humboldt",value: "39.1",toolText:"<b>39</b> cases per 100,000 people<br><b>53</b> current cases"},
+						{labelLink:"/USA/california/merced-county/", color:"#4fd100", label: "Merced",value: "37.8",toolText:"<b>38</b> cases per 100,000 people<br><b>105</b> current cases"},
+						{labelLink:"/USA/california/nevada-county/", color:"#4dd100", label: "Nevada",value: "37.1",toolText:"<b>37</b> cases per 100,000 people<br><b>37</b> current cases"},
+						{labelLink:"/USA/california/placer-county/", color:"#49d100", label: "Placer",value: "35.4",toolText:"<b>35</b> cases per 100,000 people<br><b>141</b> current cases"},
+						{labelLink:"/USA/california/sutter-county/", color:"#3dd100", label: "Sutter",value: "29.9",toolText:"<b>30</b> cases per 100,000 people<br><b>29</b> current cases"},
+						{labelLink:"/USA/california/calaveras-county/", color:"#3ad100", label: "Calaveras",value: "28.3",toolText:"<b>28</b> cases per 100,000 people<br><b>13</b> current cases"},
+						{labelLink:"/USA/california/madera-county/", color:"#35d100", label: "Madera",value: "26.1",toolText:"<b>26</b> cases per 100,000 people<br><b>41</b> current cases"},
+						{labelLink:"/USA/california/el-dorado-county/", color:"#2cd100", label: "El Dorado",value: "21.8",toolText:"<b>22</b> cases per 100,000 people<br><b>42</b> current cases"},
+						{labelLink:"/USA/california/plumas-county/", color:"#2bd100", label: "Plumas",value: "21.3",toolText:"<b>21</b> cases per 100,000 people<br><b>4</b> current cases"},
+						{labelLink:"/USA/california/yuba-county/", color:"#29d100", label: "Yuba",value: "20.3",toolText:"<b>20</b> cases per 100,000 people<br><b>16</b> current cases"},
+						{labelLink:"/USA/california/glenn-county/", color:"#23d100", label: "Glenn",value: "17.6",toolText:"<b>18</b> cases per 100,000 people<br><b>5</b> current cases"},
+						{labelLink:"/USA/california/amador-county/", color:"#23d100", label: "Amador",value: "17.6",toolText:"<b>18</b> cases per 100,000 people<br><b>7</b> current cases"},
+						{labelLink:"/USA/california/shasta-county/", color:"#21d100", label: "Shasta",value: "16.7",toolText:"<b>17</b> cases per 100,000 people<br><b>30</b> current cases"},
+						{labelLink:"/USA/california/colusa-county/", color:"#1bd100", label: "Colusa",value: "13.9",toolText:"<b>14</b> cases per 100,000 people<br><b>3</b> current cases"},
+						{labelLink:"/USA/california/mendocino-county/", color:"#18d100", label: "Mendocino",value: "12.7",toolText:"<b>13</b> cases per 100,000 people<br><b>11</b> current cases"},
+						{labelLink:"/USA/california/siskiyou-county/", color:"#16d100", label: "Siskiyou",value: "11.5",toolText:"<b>11</b> cases per 100,000 people<br><b>5</b> current cases"},
+						{labelLink:"/USA/california/del-norte-county/", color:"#14d100", label: "Del Norte",value: "10.8",toolText:"<b>11</b> cases per 100,000 people<br><b>3</b> current cases"},
+						{labelLink:"/USA/california/lake-county/", color:"#11d100", label: "Lake",value: "9.3",toolText:"<b>9.3</b> cases per 100,000 people<br><b>6</b> current cases"},
+						{labelLink:"/USA/california/butte-county/", color:"#0cd100", label: "Butte",value: "7.3",toolText:"<b>7.3</b> cases per 100,000 people<br><b>16</b> current cases"},
+						{labelLink:"/USA/california/tuolumne-county/", color:"#09d100", label: "Tuolumne",value: "5.5",toolText:"<b>5.5</b> cases per 100,000 people<br><b>3</b> current cases"},
+						{labelLink:"/USA/california/tehama-county/", color:"#00d100", label: "Tehama",value: "1.5",toolText:"<b>1.5</b> cases per 100,000 people<br><b>1</b> current cases"}
+					]
+				};
+
+
+			const dataSource3 = {
+					chart: {
+						caption: "Current Mortality Rate (CFR) In California<br>(Updated 14 hours ago on Monday, April 27, 7:00am)",
+						subcaption: "Shorter bars are better (less fatalities)<br>Longer bars are worse (more fatalities)",
+						yaxisname: "Mortality Rate: Current Number of Deaths ÷ Current Number of Cases (aka Case Fatality Rate)",
+						aligncaptionwithcanvas: "0",
+						theme: "fusion",
+						exportEnabled: 1
+					},
+
+
+					data: [
+						{labelLink:"/USA/california/shasta-county/", color:"#d10000", label: "Shasta",value: "13.33",toolText:"<b>13.3&percnt;</b> mortality rate<br><b>4</b> current deaths<br><b>30</b> current cases"},
+						{labelLink:"/USA/california/yolo-county/", color:"#d10000", label: "Yolo",value: "8.7",toolText:"<b>8.7&percnt;</b> mortality rate<br><b>14</b> current deaths<br><b>161</b> current cases"},
+						{labelLink:"/USA/california/sutter-county/", color:"#d15c00", label: "Sutter",value: "6.9",toolText:"<b>6.9&percnt;</b> mortality rate<br><b>2</b> current deaths<br><b>29</b> current cases"},
+						{labelLink:"/USA/california/tulare-county/", color:"#d17800", label: "Tulare",value: "6.35",toolText:"<b>6.3&percnt;</b> mortality rate<br><b>32</b> current deaths<br><b>504</b> current cases"},
+						{labelLink:"/USA/california/yuba-county/", color:"#d17d00", label: "Yuba",value: "6.25",toolText:"<b>6.3&percnt;</b> mortality rate<br><b>1</b> current deaths<br><b>16</b> current cases"},
+						{labelLink:"/USA/california/placer-county/", color:"#d19a00", label: "Placer",value: "5.67",toolText:"<b>5.7&percnt;</b> mortality rate<br><b>8</b> current deaths<br><b>141</b> current cases"},
+						{labelLink:"/USA/california/marin-county/", color:"#d1aa00", label: "Marin",value: "5.36",toolText:"<b>5.4&percnt;</b> mortality rate<br><b>12</b> current deaths<br><b>224</b> current cases"},
+						{labelLink:"/USA/california/inyo-county/", color:"#d1af00", label: "Inyo",value: "5.26",toolText:"<b>5.3&percnt;</b> mortality rate<br><b>1</b> current deaths<br><b>19</b> current cases"},
+						{labelLink:"/USA/california/madera-county/", color:"#d1c300", label: "Madera",value: "4.88",toolText:"<b>4.9&percnt;</b> mortality rate<br><b>2</b> current deaths<br><b>41</b> current cases"},
+						{labelLink:"/USA/california/santa-clara-county/", color:"#d1c400", label: "Santa Clara",value: "4.85",toolText:"<b>4.8&percnt;</b> mortality rate<br><b>101</b> current deaths<br><b>2,084</b> current cases"},
+						{labelLink:"/USA/california/san-joaquin-county/", color:"#d1c800", label: "San Joaquin",value: "4.78",toolText:"<b>4.8&percnt;</b> mortality rate<br><b>25</b> current deaths<br><b>523</b> current cases"},
+						{labelLink:"/USA/california/los-angeles-county/", color:"#d1cd00", label: "Los Angeles",value: "4.68",toolText:"<b>4.7&percnt;</b> mortality rate<br><b>913</b> current deaths<br><b>19,528</b> current cases"},
+						{labelLink:"/USA/california/san-bernardino-county/", color:"#d1cd00", label: "San Bernardino",value: "4.68",toolText:"<b>4.7&percnt;</b> mortality rate<br><b>82</b> current deaths<br><b>1,751</b> current cases"},
+						{labelLink:"/USA/california/san-benito-county/", color:"#c0d100", label: "San Benito",value: "4.26",toolText:"<b>4.3&percnt;</b> mortality rate<br><b>2</b> current deaths<br><b>47</b> current cases"},
+						{labelLink:"/USA/california/mono-county/", color:"#bbd100", label: "Mono",value: "4.17",toolText:"<b>4.2&percnt;</b> mortality rate<br><b>1</b> current deaths<br><b>24</b> current cases"},
+						{labelLink:"/USA/california/san-mateo-county/", color:"#b4d100", label: "San Mateo",value: "4.02",toolText:"<b>4.0&percnt;</b> mortality rate<br><b>41</b> current deaths<br><b>1,019</b> current cases"},
+						{labelLink:"/USA/california/sacramento-county/", color:"#b0d100", label: "Sacramento",value: "3.95",toolText:"<b>4.0&percnt;</b> mortality rate<br><b>41</b> current deaths<br><b>1,037</b> current cases"},
+						{labelLink:"/USA/california/san-diego-county/", color:"#a1d100", label: "San Diego",value: "3.65",toolText:"<b>3.6&percnt;</b> mortality rate<br><b>111</b> current deaths<br><b>3,043</b> current cases"},
+						{labelLink:"/USA/california/alameda-county/", color:"#99d100", label: "Alameda",value: "3.49",toolText:"<b>3.5&percnt;</b> mortality rate<br><b>52</b> current deaths<br><b>1,489</b> current cases"},
+						{labelLink:"/USA/california/ventura-county/", color:"#95d100", label: "Ventura",value: "3.42",toolText:"<b>3.4&percnt;</b> mortality rate<br><b>17</b> current deaths<br><b>497</b> current cases"},
+						{labelLink:"/USA/california/riverside-county/", color:"#90d100", label: "Riverside",value: "3.31",toolText:"<b>3.3&percnt;</b> mortality rate<br><b>118</b> current deaths<br><b>3,563</b> current cases"},
+						{labelLink:"/USA/california/napa-county/", color:"#8ed100", label: "Napa",value: "3.28",toolText:"<b>3.3&percnt;</b> mortality rate<br><b>2</b> current deaths<br><b>61</b> current cases"},
+						{labelLink:"/USA/california/contra-costa-county/", color:"#83d100", label: "Contra Costa",value: "3.06",toolText:"<b>3.1&percnt;</b> mortality rate<br><b>25</b> current deaths<br><b>817</b> current cases"},
+						{labelLink:"/USA/california/merced-county/", color:"#79d100", label: "Merced",value: "2.86",toolText:"<b>2.9&percnt;</b> mortality rate<br><b>3</b> current deaths<br><b>105</b> current cases"},
+						{labelLink:"/USA/california/imperial-county/", color:"#75d100", label: "Imperial",value: "2.79",toolText:"<b>2.8&percnt;</b> mortality rate<br><b>7</b> current deaths<br><b>251</b> current cases"},
+						{labelLink:"/USA/california/nevada-county/", color:"#71d100", label: "Nevada",value: "2.7",toolText:"<b>2.7&percnt;</b> mortality rate<br><b>1</b> current deaths<br><b>37</b> current cases"},
+						{labelLink:"/USA/california/monterey-county/", color:"#57d100", label: "Monterey",value: "2.19",toolText:"<b>2.2&percnt;</b> mortality rate<br><b>4</b> current deaths<br><b>183</b> current cases"},
+						{labelLink:"/USA/california/solano-county/", color:"#4bd100", label: "Solano",value: "1.96",toolText:"<b>1.96&percnt;</b> mortality rate<br><b>4</b> current deaths<br><b>204</b> current cases"},
+						{labelLink:"/USA/california/orange-county/", color:"#47d100", label: "Orange",value: "1.88",toolText:"<b>1.88&percnt;</b> mortality rate<br><b>39</b> current deaths<br><b>2,074</b> current cases"},
+						{labelLink:"/USA/california/stanislaus-county/", color:"#3ed100", label: "Stanislaus",value: "1.7",toolText:"<b>1.70&percnt;</b> mortality rate<br><b>5</b> current deaths<br><b>294</b> current cases"},
+						{labelLink:"/USA/california/santa-cruz-county/", color:"#3cd100", label: "Santa Cruz",value: "1.67",toolText:"<b>1.67&percnt;</b> mortality rate<br><b>2</b> current deaths<br><b>120</b> current cases"},
+						{labelLink:"/USA/california/san-francisco,-city-and-county-of/", color:"#37d100", label: "San Francisco, City and County",value: "1.56",toolText:"<b>1.56&percnt;</b> mortality rate<br><b>22</b> current deaths<br><b>1,411</b> current cases"},
+						{labelLink:"/USA/california/fresno-county/", color:"#35d100", label: "Fresno",value: "1.53",toolText:"<b>1.53&percnt;</b> mortality rate<br><b>7</b> current deaths<br><b>458</b> current cases"},
+						{labelLink:"/USA/california/kings-county/", color:"#33d100", label: "Kings",value: "1.49",toolText:"<b>1.49&percnt;</b> mortality rate<br><b>1</b> current deaths<br><b>67</b> current cases"},
+						{labelLink:"/USA/california/santa-barbara-county/", color:"#33d100", label: "Santa Barbara",value: "1.49",toolText:"<b>1.49&percnt;</b> mortality rate<br><b>7</b> current deaths<br><b>471</b> current cases"},
+						{labelLink:"/USA/california/sonoma-county/", color:"#15d100", label: "Sonoma",value: "0.91",toolText:"<b>0.91&percnt;</b> mortality rate<br><b>2</b> current deaths<br><b>220</b> current cases"},
+						{labelLink:"/USA/california/san-luis-obispo-county/", color:"#06d100", label: "San Luis Obispo",value: "0.6",toolText:"<b>0.60&percnt;</b> mortality rate<br><b>1</b> current deaths<br><b>166</b> current cases"},
+						{labelLink:"/USA/california/kern-county/", color:"#00d100", label: "Kern",value: "0.49",toolText:"<b>0.49&percnt;</b> mortality rate<br><b>4</b> current deaths<br><b>809</b> current cases"},
+						{labelLink:"/USA/california/tehama-county/", color:"#00d100", label: "Tehama",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>1</b> current cases"},
+						{labelLink:"/USA/california/siskiyou-county/", color:"#00d100", label: "Siskiyou",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>5</b> current cases"},
+						{labelLink:"/USA/california/glenn-county/", color:"#00d100", label: "Glenn",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>5</b> current cases"},
+						{labelLink:"/USA/california/amador-county/", color:"#00d100", label: "Amador",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>7</b> current cases"},
+						{labelLink:"/USA/california/butte-county/", color:"#00d100", label: "Butte",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>16</b> current cases"},
+						{labelLink:"/USA/california/alpine-county/", color:"#00d100", label: "Alpine",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>1</b> current cases"},
+						{labelLink:"/USA/california/tuolumne-county/", color:"#00d100", label: "Tuolumne",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>3</b> current cases"},
+						{labelLink:"/USA/california/del-norte-county/", color:"#00d100", label: "Del Norte",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>3</b> current cases"},
+						{labelLink:"/USA/california/calaveras-county/", color:"#00d100", label: "Calaveras",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>13</b> current cases"},
+						{labelLink:"/USA/california/colusa-county/", color:"#00d100", label: "Colusa",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>3</b> current cases"},
+						{labelLink:"/USA/california/lake-county/", color:"#00d100", label: "Lake",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>6</b> current cases"},
+						{labelLink:"/USA/california/humboldt-county/", color:"#00d100", label: "Humboldt",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>53</b> current cases"},
+						{labelLink:"/USA/california/mendocino-county/", color:"#00d100", label: "Mendocino",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>11</b> current cases"},
+						{labelLink:"/USA/california/el-dorado-county/", color:"#00d100", label: "El Dorado",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>42</b> current cases"},
+						{labelLink:"/USA/california/plumas-county/", color:"#00d100", label: "Plumas",value: "0",toolText:"<b>0&percnt;</b> because no deaths reported! Yeah!<br><b>0</b> current deaths<br><b>4</b> current cases"}
+					]
+				};
+
+			FusionCharts.ready(function () {
+					var myChart1 = new FusionCharts({
+						type: "bar2d",
+						renderAt: "chart-container1",
+						width: "100%",
+						height: "100%",
+						dataFormat: "json",
+						dataSource: dataSource
+					}).render();
+
+					var myChart2 = new FusionCharts({
+						type: "bar2d",
+						renderAt: "chart-container2",
+						width: "100%",
+						height: "100%",
+						dataFormat: "json",
+						dataSource: dataSource2
+					}).render();
+					
+					var myChart3 = new FusionCharts({
+						type: "bar2d",
+						renderAt: "chart-container3",
+						width: "100%",
+						height: "100%",
+						dataFormat: "json",
+						dataSource: dataSource3
+					}).render();            
+				});
+		
+
+		</script>
+
+		<title>Coronavirus Cases In California | Per Capita | Doubling Time | Case Fatality Rate</title>
+		
+		<meta name="title" content="Coronavirus Cases In California | Per Capita | Doubling Time | Case Fatality Rate">
+		<meta name="description" content="Are we doing better or worse? Easy-to-understand charts comparing doubling times, mortality rates and per capita results.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://www.cvleaderboard.org/">
+		<meta property="og:title" content="Coronavirus Cases In California | Per Capita | Doubling Time | Case Fatality Rate">
+		<meta property="og:description" content="Are we doing better or worse? Easy-to-understand charts comparing doubling times, mortality rates and per capita results.">
+		<meta property="og:image" content="media/twitter_image.png">
+		<meta property="fb:app_id" content="708188816586723">
+		
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:url" content="https://www.cvleaderboard.org/">
+		<meta property="twitter:title" content="Coronavirus Cases In California | Per Capita | Doubling Time | Case Fatality Rate">
+		<meta property="twitter:description" content="Are we doing better or worse? Easy-to-understand charts comparing doubling times, mortality rates and per capita results.">
+		<meta property="twitter:image" content="media/twitter_image.png">
+		<meta property="twitter:site" content="@cvleaderboard" />
+		
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164225258-1"></script>
+		
+		<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			  gtag('config', 'UA-164225258-1');
+		</script>
+
+	</head>
+  
+	<body>
+	
+		<p style="font-family: Arial, Helvetica, sans-serif;text-align:center;font-size:small">There are 3 charts below so keep scrolling down or click the following links to jump to <a href="#DoublingTime">doubling time</a>, <a href="#PerCapita">cases per 100,000 people (per capita)</a> or <a href="#CaseFatalityRate">case fatality rate</a>.</p>
+		
+		<div class="hand enter show-xs"><img src="media/scroll-up.png" alt="scroll-up"></div>
+		<a id="DoublingTime"></a>
+		
+		<div id="chart-outer-container1" style="background-color:white;position:relative;">
+			<div id="chart-container1" style="position:absolute;top:0;left:0;bottom:0;right:0;text-align:left;font-size:20px;color:white;">
+				Chart showing coronavirus doubling times in California (by county) is loading...
+			</div>
+		</div>
+		<a id="PerCapita"></a>
+		
+		<div id="chart-outer-container2" style="background-color:white;position:relative;">
+			<div id="chart-container2" style="position:absolute;top:0;left:0;bottom:0;right:0;text-align:left;font-size:20px;color:white;">
+				Chart showing per capita (cases per 100,000 people) coronavirus cases in California (by county) is loading...
+			</div>
+		</div>
+		<a id="CaseFatalityRate"></a>
+		
+		<div id="chart-outer-container3" style="background-color:white;position:relative;">
+			<div id="chart-container3" style="position:absolute;top:0;left:0;bottom:0;right:0;text-align:left;font-size:20px;color:white;">
+				Chart showing coronavirus mortaility rate (case fatality rate) in California (by county) is loading...
+			</div>
+		</div>
+
+		<script>
+			//alert('Browser width=' +  getWidth() + ' and height=' + getHeight()); 
+		</script>
+		
+		<script>
+			<!-- Scroll Indication Hand by Mo Ashraf, https://www.upwork.com/freelancers/~01968000010adee9ee  -->
+			const hand = document.querySelector('.hand');
+			
+			window.addEventListener('load', function () {
+				hand.classList.remove('enter');
+				hand.classList.add('animate');
+			});
+
+			window.addEventListener('scroll', function() {
+				if (this.scrollY >= 10) {
+					hand.style.display = 'none';
+
+				} else if (this.scrollY < 10 && this.innerWidth <= 768) {
+					hand.style.display = 'block';
+				}
+			})
+		</script>
+	
+	</body>
+
+</html>
