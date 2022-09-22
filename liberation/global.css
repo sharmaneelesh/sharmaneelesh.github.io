@@ -1,4 +1,12 @@
 @media (min-width: 575.98px) {
+
+	* {
+		font-size: 99%;
+	}
+
+	nav {
+		font-style: italic;
+	}
 	
 	#navigation {
 		display: none;
@@ -73,7 +81,6 @@
 		top: 400px;
 		font-size: 200%;
 		color: black;
-		
 	}
 	
 	
@@ -131,6 +138,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
+		margin-bottom: -150px;
 	}
 	
 	.index-bree {
@@ -152,6 +160,223 @@
 		height: 37px;
 		margin-bottom: 15px;
 		margin-top: 5px;
+	}
+
+
+
+	#csc552b-first-section {
+		background-image: url("media/csc552b.jpeg");
+		background-size:cover;
+		background-repeat: no-repeat;
+		max-width: 100%;
+		z-index: 0;
+		padding-left: 2%;
+	}
+
+	#csc552b-confinfo {
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		opacity: 0.8;
+		font-size: 200%;
+		text-align: center;
+		color: white;
+	}
+
+	#csc552b-subbody-subsection1 {
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		opacity: 0.6;
+		color: black;
+		font-size: 170%;
+	}
+
+	#csc552b-subbody-subsection2 {
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		color: white;
+		font-size: 130%;
+	}
+
+
+	.blue { color: #185875; }
+	.yellow { color: #FFF842; }
+
+	.container th h1 {
+		font-weight: bold;
+		font-size: 1em;
+		text-align: center;
+		color: #fff;
+	}
+
+	.container td {
+		font-weight: normal;
+		font-size: 1em;
+		-webkit-box-shadow: 0 2px 2px -2px #0E1119;
+		-moz-box-shadow: 0 2px 2px -2px #0E1119;
+		box-shadow: 0 2px 2px -2px #0E1119;
+	}
+
+	.container {
+		text-align: left;
+		overflow: hidden;
+		width: 80%;
+		margin: 0 auto;
+		display: table;
+		padding: 0 0 8em 0;
+	}
+
+	.container td, .container th {
+		padding-bottom: 2%;
+		padding-top: 2%;
+		padding-left:2%;  
+	}
+
+	/* Background-color of the odd rows */
+	.container tr:nth-child(odd) {
+		background-color: #323C50;
+	}
+
+	/* Background-color of the even rows */
+	.container tr:nth-child(even) {
+		background-color: #2C3446;
+	}
+
+	.container th {
+		background-color: #1F2739;
+	}
+
+	.container td:first-child { color: ; }
+
+	.container tr:hover {
+	background-color: #464A52;
+	-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+		-moz-box-shadow: 0 6px 6px -6px #0E1119;
+			box-shadow: 0 6px 6px -6px #0E1119;
+	}
+
+	.container td:hover {
+	background-color: #FFF842;
+	color: #403E10;
+	font-weight: bold;
+	
+	box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px, #7F7C21 -4px 4px, #7F7C21 -5px 5px, #7F7C21 -6px 6px;
+	transform: translate3d(6px, -6px, 0);
+	
+	transition-delay: 0s;
+		transition-duration: 0.4s;
+		transition-property: all;
+	transition-timing-function: line;
+	}
+
+	.form-style-5{
+		max-width: 500px;
+		padding: 10px 20px;
+		background: #f4f7f8;
+		margin: 10px auto;
+		padding: 20px;
+		background: #f4f7f8;
+		border-radius: 8px;
+		font-family: Georgia, "Times New Roman", Times, serif;
+	}
+	.form-style-5 fieldset{
+		border: none;
+	}
+	.form-style-5 legend {
+		font-size: 1.4em;
+		margin-bottom: 10px;
+	}
+	.form-style-5 label {
+		display: block;
+		margin-bottom: 8px;
+	}
+	.form-style-5 input[type="text"],
+	.form-style-5 input[type="date"],
+	.form-style-5 input[type="datetime"],
+	.form-style-5 input[type="email"],
+	.form-style-5 input[type="number"],
+	.form-style-5 input[type="search"],
+	.form-style-5 input[type="time"],
+	.form-style-5 input[type="url"],
+	.form-style-5 textarea,
+	.form-style-5 select {
+		font-family: Georgia, "Times New Roman", Times, serif;
+		background: rgba(255,255,255,.1);
+		border: none;
+		border-radius: 4px;
+		font-size: 15px;
+		margin: 0;
+		outline: 0;
+		padding: 10px;
+		width: 100%;
+		box-sizing: border-box; 
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box; 
+		background-color: #e8eeef;
+		color:#8a97a0;
+		-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+		box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+		margin-bottom: 30px;
+	}
+	.form-style-5 input[type="text"]:focus,
+	.form-style-5 input[type="date"]:focus,
+	.form-style-5 input[type="datetime"]:focus,
+	.form-style-5 input[type="email"]:focus,
+	.form-style-5 input[type="number"]:focus,
+	.form-style-5 input[type="search"]:focus,
+	.form-style-5 input[type="time"]:focus,
+	.form-style-5 input[type="url"]:focus,
+	.form-style-5 textarea:focus,
+	.form-style-5 select:focus{
+		background: #d2d9dd;
+	}
+	.form-style-5 select{
+		-webkit-appearance: menulist-button;
+		height:35px;
+	}
+	.form-style-5 .number {
+		background: #1abc9c;
+		color: #fff;
+		height: 30px;
+		width: 30px;
+		display: inline-block;
+		font-size: 0.8em;
+		margin-right: 4px;
+		line-height: 30px;
+		text-align: center;
+		text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+		border-radius: 15px 15px 15px 0px;
+	}
+	
+	.form-style-5 input[type="submit"],
+	.form-style-5 input[type="button"]
+	{
+		position: relative;
+		display: block;
+		padding: 19px 39px 18px 39px;
+		color: #FFF;
+		margin: 0 auto;
+		background: #1abc9c;
+		font-size: 18px;
+		text-align: center;
+		font-style: normal;
+		width: 100%;
+		border: 1px solid #16a085;
+		border-width: 1px 1px 3px;
+		margin-bottom: 10px;
+	}
+	.form-style-5 input[type="submit"]:hover,
+	.form-style-5 input[type="button"]:hover
+	{
+		background: #109177;
+	}
+	
+
+
+
+	#csc552b-second-section {
+		background-color: #242323;
+		width: 100%;
+		padding-top: 15px;
+		padding-bottom: 14px;
+		padding-left: 30px;
+		color: white;
 	}
 	
 	
@@ -197,6 +422,11 @@
 		color: white;
 	}
 
+	#welcomemessage {
+		font-family: fantasy;
+		font-size: 20px;
+	}
+
 	.secretariat-MemberData {
 		text-align: center;
 		padding: 0;
@@ -210,6 +440,11 @@
 		font-family: 'Comic Neue', cursive;
 		margin-bottom: 0;
 		margin-top: 0;
+	}
+
+	input,select {
+		width: 200px;
+		height: 40px;
 	}
 	
 	.secretariat-hr {
