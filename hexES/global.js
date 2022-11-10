@@ -1,3 +1,9 @@
+var i = 0;
+
+for (i=3; i>0; i--) {
+	alert("Press ok " + i + " times to go to the page");
+}
+
 //Scrolling effect
 var vh = jQuery(window).height();
 
