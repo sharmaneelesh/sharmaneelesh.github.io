@@ -15,12 +15,17 @@ html, body {
 
 #headertext {
     text-align: center;
-    padding: 2rem 0;
+    padding-top: 1rem;
+}
+
+#headertext h2 {
+    color: #28508b;
 }
 
 .motto {
     display: flex;
     justify-content: space-evenly;
+    font-size: large;
 }
 
 #logo {
@@ -52,7 +57,7 @@ html, body {
     margin-top: 5vh;
 }
 
-.poster {
+.poster, .research {
     margin-top: 5vh;
     margin-bottom: 5vh;
     height: 70vh;
@@ -61,7 +66,8 @@ html, body {
 
 iframe {
     margin-top: 5vh;
-    padding: 0 10% 0 10%;
+    padding: 0 7% 0 7%;
+    height: 100%;
     width: 100%;
     overflow: hidden;
 }
