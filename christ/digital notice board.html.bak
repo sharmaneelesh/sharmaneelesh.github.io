@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<title>Online HTML Editor</title>
+<head>
+</head>
+<body>
+<table>
+    <tr>
+        <td width=50%>
+            Left Top
+        </td>
+        <td>Right top <br>
+		Right top <br>
+		Right top <br>
+		Right top <br>
+		Right top <br>
+		Right top <br>
+		Right top <br>
+		Right top <br>
+		</td>
+    </tr>
+    <tr>
+        <td width=50%>
+            Left Bottom
+        </td>
+        <td>
+            <iframe src="https://calendar.google.com/calendar/embed?src=cs%40christuniversity.in&ctz=Asia%2FKolkata&amp;mode=AGENDA&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showNav=0&amp;showTz=0" style="border: 0" width="500" height="350" frameborder="0" scrolling="no"></iframe>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
