@@ -53,15 +53,16 @@ html, body {
 }
 
 .poster {
-    margin-top: 2vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    height: 70vh;
     padding: 0 10% 0 10%;
-    width: 100%;
 }
 
 iframe {
     margin-top: 5vh;
     padding: 0 10% 0 10%;
-    height: 70vh;
+    height: 30vh;
     width: 100%;
     overflow: hidden;
 }
