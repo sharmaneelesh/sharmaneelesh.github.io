@@ -62,7 +62,6 @@ html, body {
 iframe {
     margin-top: 5vh;
     padding: 0 10% 0 10%;
-    height: 30vh;
     width: 100%;
     overflow: hidden;
 }
