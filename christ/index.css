@@ -1,0 +1,74 @@
+html, body {
+    overflow: hidden;
+}
+
+#section1 {
+    background-image: url("media/background.JPG");
+    background-size: cover;
+}
+
+#header {
+    height: 15vh;
+    background-color: white;
+    opacity: 0.8;
+}
+
+#headertext {
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.motto {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#logo {
+    max-width: 85%;
+}
+
+#content {
+    height: 80vh;
+}
+
+#opportunity {
+    margin-top: 5vh;
+    height: 35vh;
+    border-radius: 5%;
+    opacity: 0.8;
+    background-image: url("media/oppurtunity.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#opportunity h3 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 1rem 0;
+}
+
+.placement {
+    width: 100%;
+    margin-top: 5vh;
+}
+
+.poster {
+    margin-top: 2vh;
+    padding: 0 10% 0 10%;
+    width: 100%;
+}
+
+iframe {
+    margin-top: 5vh;
+    padding: 0 10% 0 10%;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#footer {
+    height: 5vh;
+    background-color: white;
+    text-align: center;
+    padding: 0.7vh;
+}
