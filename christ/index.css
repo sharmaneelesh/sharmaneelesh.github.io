@@ -52,6 +52,11 @@ html, body {
     margin: 1rem 0;
 }
 
+.placement {
+    width: 100%;
+    margin-top: 5vh;
+}
+
 .poster, .research {
     margin-top: 5vh;
     margin-bottom: 5vh;
@@ -69,13 +74,6 @@ iframe {
     margin-top: 5vh;
     padding: 0 7% 0 7%;
     height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
-.placements {
-    margin-top: 5vh;
-    padding: 0 7% 0% 7%;
     width: 100%;
     overflow: hidden;
 }
