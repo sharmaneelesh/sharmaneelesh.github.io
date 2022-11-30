@@ -44,7 +44,7 @@ myForm.addEventListener("submit", function (e) {
                 {
                     let entries = 0
                     for (i = 1; i < data.length; i++) {
-                        if ((data[i].vote_average > 7) && (data[i].revenue > data[i].budget) && (data[i].budget > 14000000) && data[i].release_date > 2005) {
+                        if (entries < 10 && (data[i].vote_average > 7) && (data[i].revenue > data[i].budget) && (data[i].budget > 14000000) && data[i].release_date > 2005) {
                             nodes.push({ id: nodeCounter, label: data[i].title })
                             edges.push({ id: edgeCounter, start: 8, end: nodeCounter, label: "" })
                             nodeCounter++
@@ -55,7 +55,7 @@ myForm.addEventListener("submit", function (e) {
 
                     entries = 0
                     for (i = 1; i < data.length; i++) {
-                        if ((data[i].revenue < data[i].budget) && (data[i].budget > 14000000) && data[i].release_date > 2005) {
+                        if (entries < 7 && (data[i].revenue < data[i].budget) && (data[i].budget > 14000000) && data[i].release_date > 2005) {
                             nodes.push({ id: nodeCounter, label: data[i].title })
                             edges.push({ id: edgeCounter, start: 7, end: nodeCounter, label: "" })
                             nodeCounter++
@@ -66,7 +66,7 @@ myForm.addEventListener("submit", function (e) {
 
                     entries = 0
                     for (i = 1; i < data.length; i++) {
-                        if ((data[i].budget < 14000000) && data[i].release_date > 2005) {
+                        if (entries < 4 && (data[i].budget < 14000000) && data[i].release_date > 2005) {
                             nodes.push({ id: nodeCounter, label: data[i].title })
                             edges.push({ id: edgeCounter, start: 2, end: nodeCounter, label: "" })
                             nodeCounter++
@@ -77,7 +77,7 @@ myForm.addEventListener("submit", function (e) {
 
                     entries = 0
                     for (i = 1; i < data.length; i++) {
-                        if (data[i].release_date < 2005) {
+                        if (entries < 5 && data[i].release_date < 2005) {
                             nodes.push({ id: nodeCounter, label: data[i].title })
                             edges.push({ id: edgeCounter, start: 5, end: nodeCounter, label: "" })
                             nodeCounter++
