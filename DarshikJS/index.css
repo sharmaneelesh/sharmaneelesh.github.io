@@ -17,7 +17,7 @@ form {
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 400px;
+    height: 500px;
     padding: 20px;
     width: 500px;
 }
@@ -46,6 +46,10 @@ form {
     width: 100%;
 }
 
+.ic1 {
+    margin-top: 40px;
+}
+
 .ic2 {
     margin-top: 30px;
 }
@@ -59,8 +63,12 @@ form {
     font-size: 18px;
     height: 100%;
     outline: 0;
-    padding: 10px 20px 0;
+    padding: 4px 20px 0;
     width: 100%;
+}
+
+#csvFile {
+    padding-top: 10px;
 }
 
 .placeholder {
